@@ -1,23 +1,12 @@
-# score = 0
 correct_answer = []
 incorrect_answer = []
 
 incorrect_num = []
 correct_num = []
 
-# Truck
-# Rhydon
-# Razor Claw
-# true
-# true
-# 10
-# Because it wants to be like Pikachu
-# Dawn stone
-# false
-# true
-
 print("Welcome to a Pokemon quiz, this will generally be about the Pokemon games. Try your best!")
 
+"""The questions variables"""
 question1 = "1. What did people think Mew was hiding under in Pokemon red?"
 question2 = "2. What was the first Pokemon ever created?"
 question3 = "3. What does Sneasel need to hold in order to evolve?"
@@ -30,6 +19,7 @@ question9 = "9. Can Legendaries have a gender?"
 question10 = "10. Can Dugtrio learn Sucker punch?"
 
 def questions():
+    """Questions for the quiz"""
 
     """Question1"""
     print(question1)
@@ -117,6 +107,7 @@ def questions():
     """Question7"""
     print(question7)
     print("a. Because Mimikyu is Pikachu b. It's Pikachu's evolution c. Because it wants to be Pikachu d. Because Mimikyu is lonely")
+    print("Enter a, b, c or d as a response")
     answer = 'd'
     result = input()
 
@@ -131,6 +122,7 @@ def questions():
     """Question8"""
     print(question8)
     print("a. King's Rock b. Dragon Scale c. Moon Stone d. Dawn Stone")
+    print("Enter a, b, c or d as a response")
     answer = 'd'
     result = input()
 
@@ -173,21 +165,15 @@ def questions():
 
 
 def answers(result, answer, correct_answer, incorrect_answer):
-    """Prints 1 if answer is correct, prints 0 if incorrect. Appends a 1 to the correct_answer list"""
+    """Prints if answer is correct or incorrect. Appends a 1 to the correct_answer list"""
     # i = 0
     if result == answer:
-        print("1") #Returning 1? ask Jess
-        # score += 1
+        print("That is correct!")
         correct_answer.append(1)
-
-        # for i in range(i):
-        #     if len(correct_answer) > 0:
-        #         correct_answer.append()
-        #     i+=1
 
 
     elif result != answer:
-        print("0")
+        print("That is incorrect.")
         incorrect_answer.append(1)
 
 
@@ -205,15 +191,15 @@ def results():
     print("Questions you got incorrect:")
     print(incorrect_num)
 
-    print("Your total score is:")
+    print("Your total score out of 10 is:")
     print(a)
 
     if a == 10:
         print("Great! You're a complete Pokemon master!")
-    elif a < 6:
+    elif a > 6:
         print("You're getting there, just gain a bit more of Pokemon knowledge!")
     elif a < 3:
-        print("You'll get there eventually, don't give up!")
+        print("It's okay, you'll get there eventually, don't give up!")
 
 
 questions()
