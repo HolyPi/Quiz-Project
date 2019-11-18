@@ -170,11 +170,13 @@ def answers(result, answer, correct_answer, incorrect_answer):
     if result == answer:
         print("That is correct!")
         correct_answer.append(1)
+        print("\n")
 
 
     elif result != answer:
         print("That is incorrect.")
         incorrect_answer.append(1)
+        print("\n")
 
 
 def results():
