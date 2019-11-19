@@ -4,7 +4,18 @@ incorrect_answer = []
 incorrect_num = []
 correct_num = []
 
-print("Welcome to a Pokemon quiz, this will generally be about the Pokemon games. Try your best!")
+pkmart = '''                                 ,'\
+    _.----.        ____         ,'  _\   ___    ___     ____
+_,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.
+\      __    \    '-.  | /   `.  ___    |    \/    |   '-.   \ |  |
+ \.    \ \   |  __  |  |/    ,','_  `.  |          | __  |    \|  |
+   \    \/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |
+    \     ,-'/  /   \    ,'   | \/ / ,`.|         /  /   \  |     |
+     \    \ |   \_/  |   `-.  \    `'  /|  |    ||   \_/  | |\    |
+      \    \ \      /       `-.`.___,-' |  |\  /| \      /  | |   |
+       \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   |
+        \_.-'       |__|    `-._ |              '-.|     '-.| |   |
+                                `'                            '-._|'''
 
 """The questions variables"""
 question1 = "1. What did people think Mew was hiding under in Pokemon red?"
@@ -19,6 +30,9 @@ question9 = "9. Can Legendaries have a gender?"
 question10 = "10. Can Dugtrio learn Sucker punch?"
 
 def questions():
+
+    print("Welcome to a Pokemon quiz, this will generally be about the Pokemon games. Try your best!")
+
     """Questions for the quiz"""
 
     """Question1"""
@@ -106,14 +120,14 @@ def questions():
 
     """Question7"""
     print(question7)
-    print("a. Because Mimikyu is Pikachu b. It's Pikachu's evolution c. Because it wants to be Pikachu d. Because Mimikyu is lonely")
+    print("a. Because Mimikyu is Pikachu b. It's Pikachu's evolution c. Because Pikachu is cute d. Because Mimikyu is lonely")
     print("Enter a, b, c or d as a response")
     answer = 'd'
     result = input()
 
     answers(result, answer, correct_answer, incorrect_answer)
     if result != answer:
-        print("Correct answer is d, because Mimikyu is lonely!")
+        print("Correct answer is d, because Mimikyu is lonely, and it wants to be like Pikachu.")
         incorrect_num.append(7)
     else:
         correct_num.append(7)
@@ -128,7 +142,7 @@ def questions():
 
     answers(result, answer, correct_answer, incorrect_answer)
     if result != answer:
-        print("Correct answer is d, Dawn Stone")
+        print("Correct answer is d, Dawn Stone.")
         incorrect_num.append(8)
     else:
         correct_num.append(8)
@@ -166,7 +180,7 @@ def questions():
 
 def answers(result, answer, correct_answer, incorrect_answer):
     """Prints if answer is correct or incorrect. Appends a 1 to the correct_answer list"""
-    # i = 0
+
     if result == answer:
         print("That is correct!")
         correct_answer.append(1)
@@ -183,26 +197,28 @@ def results():
     a = sum(correct_answer)
     b = sum(incorrect_answer)
 
-    print("Thanks for playing the Pokemon Quiz! Here are your scores: ")
+    print("Thanks for playing the Pokemon quiz! Here are your scores: ")
+    print("\n")
     print("Total of correct answers:")
     print(a)
     print("Total of incorrect answers:")
     print(b)
+    print("\n")
     print("Questions you got correct:")
     print(correct_num)
     print("Questions you got incorrect:")
     print(incorrect_num)
-
+    print("\n")
     print("Your total score out of 10 is:")
     print(a)
 
     if a == 10:
         print("Great! You're a complete Pokemon master!")
+        print(pkmart)
     elif a > 6:
         print("You're getting there, just gain a bit more of Pokemon knowledge!")
     elif a < 3:
         print("It's okay, you'll get there eventually, don't give up!")
-
 
 questions()
 results()
